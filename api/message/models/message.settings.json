@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "name": "Message",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Content": {
+      "type": "text"
+    },
+    "Sender": {
+      "model": "contact"
+    },
+    "Read": {
+      "type": "boolean",
+      "default": false
+    },
+    "Date": {
+      "type": "datetime"
+    },
+    "conversation": {
+      "via": "messages",
+      "model": "conversation"
+    }
+  }
+}

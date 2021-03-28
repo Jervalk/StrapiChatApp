@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "name": "Contact",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "conversations": {
+      "collection": "conversation",
+      "via": "contacts"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

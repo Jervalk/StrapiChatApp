@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conversations",
+  "info": {
+    "name": "Conversation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "messages": {
+      "collection": "message",
+      "via": "conversation"
+    },
+    "contacts": {
+      "via": "conversations",
+      "collection": "contact",
+      "dominant": true
+    }
+  }
+}
